@@ -132,6 +132,6 @@ exports.destroy = function(req, res, next) {
 }
 
 exports.msg = function(req, res, next) {
-     var msg = process.env.HELLOWORLD;
+     var msg = process.env.HELLO_WORLD;
      res.send('Message:[' + msg + ']');
 }
