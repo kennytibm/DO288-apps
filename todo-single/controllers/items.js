@@ -14,6 +14,7 @@ exports.context = function(server, path, itemsModel) {
     server.get(context + '-count', this.count);
     server.post(context + '/', this.save);
     server.del(context + '/:id', this.destroy);
+    server.get(context + '-msg', this.msg);
     
     model = itemsModel;
 };
@@ -128,4 +129,9 @@ exports.destroy = function(req, res, next) {
             }
         });
     }
+}
+
+exports.msg = function(req, res, next) {
+     var msg = process.env.HELLOWORLD;
+     res.send('Message:[' + msg + ']');
 }
